@@ -1,0 +1,6 @@
+env
+imgs
+imgs-out
+*.pdf
+*.txt
+*.ipynb
