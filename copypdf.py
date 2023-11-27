@@ -1,4 +1,6 @@
-import pikepdf
+# import pikepdf
+import fitz
 
-pdf = pikepdf.open(r'美的沉思_中国艺术思想刍论_蒋勋.pdf')
-pdf.save(r'美的沉思_中国艺术思想刍论_蒋勋2.pdf')
+# pdf = pikepdf.open(r'C:\Users\myfei\Downloads\赢在美国.pdf')
+pdf = fitz.open(r'C:\Users\myfei\Downloads\赢在美国.pdf')
+pdf.save(r'C:\Users\myfei\Downloads\赢在美国2.pdf')

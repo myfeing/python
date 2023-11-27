@@ -1,7 +1,9 @@
 import os, fitz
-import PySimpleGUI as psg  # for showing a progress bar
+# import PySimpleGUI as psg  # for showing a progress bar
+
 doc = fitz.open()  # PDF with the pictures
-imgdir = "D:/2012_10_05"  # where the pics are
+imgdir = r"C:\Users\myfei\Downloads\赢在美国\\"  # where the pics are
+# uidir = unicode(imgdir,'utf-8')
 imglist = os.listdir(imgdir)  # list of them
 imgcount = len(imglist)  # pic count
 
@@ -14,7 +16,7 @@ for i, f in enumerate(imglist):
     page = doc.new_page(width = rect.width,  # new page with ...
                        height = rect.height)  # pic dimension
     page.show_pdf_page(rect, imgPDF, 0)  # image fills the page
-    psg.EasyProgressMeter("Import Images",  # show our progress
-        i+1, imgcount)
+    # psg.EasyProgressMeter("Import Images",  # show our progress
+    #    i+1, imgcount)
 
-doc.save("all-my-pics.pdf")
+doc.save(r"all-my-pics.pdf")
