@@ -5,3 +5,4 @@ imgs-out
 *.txt
 *.csv
 *.ipynb
+*.*~
