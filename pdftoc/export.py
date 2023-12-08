@@ -25,7 +25,7 @@ fname = args.doc  # input document filename
 doc = fitz.open(fname)
 toc = doc.get_toc(simple=False)
 ext = fname[-3:].lower()
-outf = open("output.csv", "w", encoding="utf-8")
+outf = open("out.csv", "w", encoding="utf-8")
 for t in toc:
     t4 = t[3]
     if ext == "pdf":
