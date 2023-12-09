@@ -5,8 +5,8 @@ with open("in.csv",encoding='utf-8') as inf:
     with open("out.csv", "w", encoding='utf-8') as outf:
         cw = csv.writer(outf, delimiter =';',quotechar ='"',lineterminator='\n',quoting=csv.QUOTE_NONNUMERIC)
         re_title = re.compile(r'^(.*)(?<=\s)(\d+)$')
-        re_lvl0 = re.compile('^([pP]art|[lL]ist)')
-        re_lvl1 = re.compile(r'^([Cc]hapter|[Tt]able|[Ff]igure|\d+[\.\s])')
+        # re_lvl0 = re.compile('^([pP]art|[lL]ist)')
+        re_lvl1 = re.compile(r'^(\w+|\d+[\.\s])')
         re_lvl2 = re.compile(r'^(\d+\.\d+)')
         re_lvl3 = re.compile(r'^\d+\.\d+\.\d+')
         re_lvl4 = re.compile(r'^\d+\.\d+\.\d+\.\d+')
@@ -24,19 +24,19 @@ with open("in.csv",encoding='utf-8') as inf:
             mat_title = re_title.search(line)
             # print(line)
             # print(mat_title.groups())
-            if tot_lines.index(line) > 1:
-                pn = str(int(mat_title.group(2).strip()) + 20)
+            if tot_lines.index(line) > 0:
+                pn = str(int(mat_title.group(2).strip()) + 9)
             else:
                 pn = mat_title.group(2).strip()
             # pn = str(int(mat_title.group(2).strip()) + 21)
             if re_lvl4.search(line) != None:
-                lvl = 5
-            elif re_lvl3.search(line) != None:
                 lvl = 4
-            elif re_lvl2.search(line) != None:
+            elif re_lvl3.search(line) != None:
                 lvl = 3
-            elif re_lvl1.search(line) != None:
+            elif re_lvl2.search(line) != None:
                 lvl = 2
+            elif re_lvl1.search(line) != None:
+                lvl = 1
             else:
                 lvl = 1
             newline = [lvl, mat_title.group(1).strip(), int(pn)]
