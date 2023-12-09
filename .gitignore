@@ -3,6 +3,5 @@ imgs
 imgs-out
 *.pdf
 *.txt
-*.csv
 *.ipynb
 *.*~
