@@ -1,10 +1,12 @@
 import fitz
 
-doc = fitz.open(r'Parsing Techniques A Practical Guide by Dick Grune, Ceriel J. H. Jacobs.pdf') # some new or existing PDF document
-pns = [255, 282, 361, 442, 489, 536]
+doc = fitz.open(r'Geometric Modeling Theory and Practice - The State of the Art.pdf') # some new or existing PDF document
+pns = [10, 163, 164, 347, 348, 399]
+incr = 0
 for pn in pns:
-    rect = doc.load_page(pn).bound()
-    page = doc.new_page(pn, # insertion point: end of document
+    rect = doc.load_page(pn+incr).bound()
+    page = doc.new_page(pn+incr, # insertion point
 					width = rect.width, # page dimension: A4 portrait
 					height = rect.height)
-doc.save("doc-with-new-blank-page.pdf") # save the document
+    incr = incr + 1
+doc.save("Geometric Modeling Theory and Practice - The State of the Art2.pdf") # save the document
