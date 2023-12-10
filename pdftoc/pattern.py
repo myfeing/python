@@ -25,8 +25,8 @@ with open("in.txt",encoding='utf-8') as inf:
             # print(sline)
             mat_title = re_title.search(sline)
             # print(mat_title.groups())
-            if tot_lines.index(line) > 3:
-                pn = str(int(mat_title.group(2).strip()) + 36)
+            if tot_lines.index(line) > 2:
+                pn = str(int(mat_title.group(2).strip()) + 14)
             else:
                 pn = mat_title.group(2).strip()
             # pn = str(int(mat_title.group(2).strip()) + 21)
