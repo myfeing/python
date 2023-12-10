@@ -5,9 +5,9 @@ with open("in.txt",encoding='utf-8') as inf:
     with open("in.csv", "w", encoding='utf-8') as outf:
         cw = csv.writer(outf, delimiter =';',quotechar ='"',lineterminator='\n',quoting=csv.QUOTE_NONNUMERIC)
         re_title = re.compile(r'^(.*)(?<=\s)(\d+)$')
-        from_lvl0 = 1
+        from_lvl0 = 0
         re_lvl0 = re.compile(r'^[^\d]+')
-        re_lvl1 = re.compile(r'^(\d+[\.\s])')
+        re_lvl1 = re.compile(r'^([^\d]+|\d+[\.\s])')
         re_lvl2 = re.compile(r'^(\d+\.\d+)')
         re_lvl3 = re.compile(r'^\d+\.\d+\.\d+')
         re_lvl4 = re.compile(r'^\d+\.\d+\.\d+\.\d+')
@@ -16,17 +16,17 @@ with open("in.txt",encoding='utf-8') as inf:
         lvl = 1
         for line in  tot_lines:
             
-            if re_div.search(line) != None:
+            if from_lvl0 != 0 and re_div.search(line) != None:
                 sline = re_div.sub(' ', line)
             else:
                 sline = line
             
             # print(sline)
+            # print(sline)
             mat_title = re_title.search(sline)
-            # print(line)
             # print(mat_title.groups())
-            if tot_lines.index(line) > 2:
-                pn = str(int(mat_title.group(2).strip()) + 12)
+            if tot_lines.index(line) > 3:
+                pn = str(int(mat_title.group(2).strip()) + 36)
             else:
                 pn = mat_title.group(2).strip()
             # pn = str(int(mat_title.group(2).strip()) + 21)
