@@ -5,3 +5,5 @@ imgs-out
 *.txt
 *.ipynb
 *.*~
+*.cue
+*.json
