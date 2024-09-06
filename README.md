@@ -10,5 +10,5 @@
 ---
 
 ## donate
-<img src="alipay.jpg" width="300" height="500">
-<img src="wechat.png" width="300" height="500">
+<img src="resources/alipay.jpg" width="200" height="300">
+<img src="resources/wechat.png" width="200" height="300">
