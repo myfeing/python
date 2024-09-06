@@ -1,4 +1,4 @@
-import sys, json, re
+import sys, json, re, gettext
 
 def convert2hms(ms):
     sec = int((ms/1000)%60)
@@ -6,8 +6,7 @@ def convert2hms(ms):
     hms = str(min) + ':' + str(sec) + ':00'
     return hms
 
-if __name__ == '__main__':
-    in_file = sys.argv[1]
+def convert2cue(in_file):
     with open(in_file) as f:
         ori = f.read()
         cnt = json.loads(ori)
@@ -27,3 +26,7 @@ if __name__ == '__main__':
                 of.write('    INDEX 01 ' + index1 + '\n')
                 n = n + 1
             of.close()
+
+
+if __name__ == '__main__':
+    convert2cue(sys.argv[1])

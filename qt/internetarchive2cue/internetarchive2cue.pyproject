@@ -1,0 +1,10 @@
+{
+    "files": [
+        "widget.py",
+        "form.ui",
+        "../../internet-archive-2-cue.py",
+        "internetarchive2cue.qrc",
+        "translations/internetarchive2cue_zh_CN.ts",
+        "../../README.md"
+    ]
+}
