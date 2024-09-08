@@ -16,13 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLayout,
-    QLineEdit, QSizePolicy, QToolButton, QWidget)
+    QLineEdit, QPushButton, QSizePolicy, QToolButton,
+    QWidget)
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
         if not Widget.objectName():
             Widget.setObjectName(u"Widget")
-        Widget.resize(440, 50)
+        Widget.resize(440, 80)
         self.horizontalLayoutWidget = QWidget(Widget)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
         self.horizontalLayoutWidget.setGeometry(QRect(10, 10, 421, 31))
@@ -40,11 +41,14 @@ class Ui_Widget(object):
 
         self.horizontalLayout.addWidget(self.lineEdit)
 
-        self.toolButton = QToolButton(self.horizontalLayoutWidget)
-        self.toolButton.setObjectName(u"toolButton")
+        self.toolBtn = QToolButton(self.horizontalLayoutWidget)
+        self.toolBtn.setObjectName(u"toolBtn")
 
-        self.horizontalLayout.addWidget(self.toolButton)
+        self.horizontalLayout.addWidget(self.toolBtn)
 
+        self.okBtn = QPushButton(Widget)
+        self.okBtn.setObjectName(u"okBtn")
+        self.okBtn.setGeometry(QRect(365, 50, 71, 21))
 
         self.retranslateUi(Widget)
 
@@ -54,6 +58,7 @@ class Ui_Widget(object):
     def retranslateUi(self, Widget):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Internet Archive Audio Segment Data File Convert to cue", None))
         self.label.setText(QCoreApplication.translate("Widget", u"Audio Segment Data File", None))
-        self.toolButton.setText(QCoreApplication.translate("Widget", u"...", None))
+        self.toolBtn.setText(QCoreApplication.translate("Widget", u"...", None))
+        self.okBtn.setText(QCoreApplication.translate("Widget", u"Convert", None))
     # retranslateUi
 

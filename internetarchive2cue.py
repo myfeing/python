@@ -1,3 +1,4 @@
+
 import sys, json, re, gettext
 
 def convert2hms(ms):
@@ -13,7 +14,7 @@ def convert2cue(in_file):
         for item in cnt:
             ss = re.match(r'disc\d+/(.*)\.flac', item['file'])
             out_file = ss.group(1) + '.cue'
-            of = open(out_file, 'w')
+            of = open(out_file, 'w', encoding='utf-8')
             of.write('TITLE "' + item['tracks'][0]['file_md']['album'] + '"\n')
             of.write('PERFORMER "' + item['tracks'][0]['file_md']['artist'] + '"\n')
             of.write('FILE "' + ss.group(1) +'.flac" WAVE' + '\n')
