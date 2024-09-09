@@ -15,9 +15,9 @@ import rc_internetarchive2cue
 import sys
 from PySide6.QtWidgets import QFileDialog
 
-sys.path.append("../../")
+# sys.path.append("../../")
 
-import internetarchive2cue.convert2cue as convert2cue
+import convert2cue
 
 class Widget(QWidget):
     def __init__(self, parent=None):
