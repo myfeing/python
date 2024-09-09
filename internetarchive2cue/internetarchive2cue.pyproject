@@ -2,7 +2,7 @@
     "files": [
         "widget.py",
         "form.ui",
-        "../../internetarchive2cue.py",
+        "convert2cue.py",
         "internetarchive2cue.qrc",
         "translations/internetarchive2cue_zh_CN.ts"
     ]

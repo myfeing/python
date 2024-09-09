@@ -17,7 +17,7 @@ from PySide6.QtWidgets import QFileDialog
 
 sys.path.append("../../")
 
-import internetarchive2cue
+import internetarchive2cue.convert2cue as convert2cue
 
 class Widget(QWidget):
     def __init__(self, parent=None):
@@ -32,7 +32,7 @@ class Widget(QWidget):
         fn = self.ui.lineEdit.text()
         fn = fn.strip()
         if fn != "":
-            internetarchive2cue.convert2cue(fn)
+            convert2cue.convert2cue(fn)
 
     @Slot()
     def openfiledialog(self):
